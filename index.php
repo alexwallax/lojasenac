@@ -21,5 +21,11 @@
 //    echo "Produto {$categoria} inserido com Sucesso";
 //}
 
+require_once './classes/modelo/Categoria.php';
+require_once './classes/dao/CategoriaDao.php';
 
+$categoriaDAO = new CategoriaDAO();
 
+echo '<pre>';
+print_r($categoriaDAO->listarTodos());
+echo '<pre>';
