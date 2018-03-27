@@ -1,3 +1,9 @@
+<?php
+    require_once './classes/modelo/Categoria.php';
+    require_once './classes/dao/CategoriaDao.php';
+    
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -6,21 +12,35 @@
         <title></title>
     </head>
     <body>
-        <form action="./classes/dao/CategoriaDao.php" method="post">
-            <table>
+
+        <table>
+
+            <thead>
+
                 <tr>
                     <td>Id</td>
                     <td>Nome</td>
                 </tr>
-                <tr>
-                    <td>
-                        
-                    </td>
-                    <td>
-                        
-                    </td>
-                </tr>
-            </table>
-        </form>
+            </thead>
+
+            <tbody>
+
+                <?php
+                $dao = new CategoriaDAO();
+                $categorias = $dao->listarTodos();
+                foreach ($categorias as $categoria) {
+                    ?>
+                    <tr>
+                        <td><?= $categoria->getId() ?></td>
+                        <td><?= $categoria->getNome() ?></td>
+                    </tr>
+                    <?php
+                }
+                ?>
+
+            </tbody>
+
+        </table>
+
     </body>
 </html>
