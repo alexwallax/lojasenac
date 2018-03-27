@@ -1,7 +1,6 @@
 <?php
     require_once './classes/modelo/Categoria.php';
-    require_once './classes/dao/CategoriaDao.php';
-    
+    require_once './classes/dao/CategoriaDao.php';   
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +19,7 @@
                 <tr>
                     <td>Id</td>
                     <td>Nome</td>
+                    <td>Ação</td>
                 </tr>
             </thead>
 
@@ -30,14 +30,17 @@
                 $categorias = $dao->listarTodos();
                 foreach ($categorias as $categoria) {
                     ?>
-                    <tr>
+                    <tr> 
                         <td><?= $categoria->getId() ?></td>
                         <td><?= $categoria->getNome() ?></td>
+                        <td><button type="submit" value="Remover">Remover</button></td>
                     </tr>
                     <?php
                 }
                 ?>
-
+                    
+                       
+                    
             </tbody>
 
         </table>
