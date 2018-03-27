@@ -1,5 +1,8 @@
 <?php
 
+require_once './classes/dao/conexao.php';
+require_once './classes/dao/CategoriaDao.php';
+
 class Categoria {
     
     private $id;

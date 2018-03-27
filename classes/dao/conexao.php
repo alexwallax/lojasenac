@@ -1,6 +1,6 @@
 <?php
 
-class Conexao {
+abstract class Conexao {
     
     private static $SERVER = "localhost";
     private static $USER = "root";

@@ -1,6 +1,7 @@
 <?php
-    require_once './classes/modelo/Categoria.php';
-    require_once './classes/dao/CategoriaDao.php';   
+require_once './classes/dao/conexao.php';
+require_once './classes/modelo/Categoria.php';
+require_once './classes/dao/CategoriaDao.php';
 ?>
 
 <!DOCTYPE html>
@@ -33,14 +34,18 @@
                     <tr> 
                         <td><?= $categoria->getId() ?></td>
                         <td><?= $categoria->getNome() ?></td>
-                        <td><a href="" >Remover</a></td>
+                        <td>
+                            <form action="remove-categoria.php" method="post">
+                                <input type="hidden" name="id" value="<?= $categoria->getId() ?>">
+                                <button type="submit">Remover</button>
+                            </form>
+                        </td>
                     </tr>
                     <?php
                 }
                 ?>
-                    
-                       
-                    
+
+
             </tbody>
 
         </table>

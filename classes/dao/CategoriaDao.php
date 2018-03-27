@@ -1,31 +1,31 @@
 <?php
 
+require_once './classes/dao/conexao.php';
+require_once './classes/modelo/Categoria.php';
+
 class CategoriaDAO {
     
     private $conexao;
     
     public function __construct() {
-        $this->conexao = mysqli_connect("localhost", "root", "", "loja");
+        $this->conexao = Conexao::conectar();
         
     }
 
     public function inserir(Categoria $categoria) {
-        $conexao = mysqli_connect("localhost", "root", "", "loja");
         $sql = "insert into CATEGORIAS (cat_nome) values ('{$categoria->getNome()}')";
-        return mysqli_query($conexao, $sql);
+        return mysqli_query($this->conexao, $sql);
     }
     
     public function remover(Categoria $categoria) {
-        $conexao = mysqli_connect("localhost", "root", "", "loja");
         $sql = "delete from categorias where id={$categoria->getId()}";
-        return mysqli_query($conexao, $sql);
+        return mysqli_query($this->conexao, $sql);
     }    
 
     public function listarTodos() {
         $categorias = array();
-        $conexao = mysqli_connect("localhost", "root", "", "loja");       
         $sql = "select * from categorias";
-        $resultado = mysqli_query($conexao, $sql);
+        $resultado = mysqli_query($this->conexao, $sql);
         while ($categoria_array = mysqli_fetch_assoc($resultado)) {
             $categoria = new Categoria();
             $categoria->setId($categoria_array['CAT_ID']);
