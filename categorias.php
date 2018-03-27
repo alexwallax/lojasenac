@@ -33,7 +33,7 @@
                     <tr> 
                         <td><?= $categoria->getId() ?></td>
                         <td><?= $categoria->getNome() ?></td>
-                        <td><button type="submit" value="Remover">Remover</button></td>
+                        <td><a href="" >Remover</a></td>
                     </tr>
                     <?php
                 }
