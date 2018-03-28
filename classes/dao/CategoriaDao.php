@@ -1,15 +1,11 @@
 <?php
 
-require_once './classes/dao/conexao.php';
-require_once './classes/modelo/Categoria.php';
-
 class CategoriaDAO {
     
     private $conexao;
     
     public function __construct() {
-        $this->conexao = Conexao::conectar();
-        
+        $this->conexao = Conexao::conectar();  
     }
 
     public function inserir(Categoria $categoria) {
@@ -18,7 +14,7 @@ class CategoriaDAO {
     }
     
     public function remover(Categoria $categoria) {
-        $sql = "delete from categorias where id={$categoria->getId()}";
+        $sql = "delete from categorias where cat_id={$categoria->getId()}";
         return mysqli_query($this->conexao, $sql);
     }    
 
@@ -34,8 +30,5 @@ class CategoriaDAO {
         }
         return $categorias;
     }
-    
-    
-    
-    
+  
 }
