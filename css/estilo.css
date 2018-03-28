@@ -1,0 +1,41 @@
+/* 
+    Created on : 18/02/2018, 12:34:18
+    Author     : ALEXWALLACEARAUJODES
+    Version 0.1
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+/* ********** layout ********** */
+html ,body, .capa {
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    background: url("../img/fut10.jpg") no-repeat, /* colocando dois backgrounds com esses dois urls */
+        url('../img/ruido.png'), /* isso é possivel pq elas estão ambas com opacidade */
+        linear-gradient(100deg, #faebcc, #d9edf7); /* Essa linha de codigo vai colocar um gradiente */
+    background-attachment: fixed; /* faz com que o background de fundo fique parado */
+    font-family: Helvetica,Arial,sans-serif;
+    /*  overflow-x: hidden;  remove a barra de navegação na horizontal */
+    /* o overflow-y remove a barra de navegação na vertical */
+    background-size: 100% 100%;
+}
+
+#ex3 {
+    text-align: center;
+    background-color: #5cb85c;
+    width: 400px;
+    height: 300px;
+}
+
+#ex4 {
+    float: left;
+    text-align: center;
+    background-color: #d9edf7;
+    width: 400px;
+    height: 300px;
+}
+
